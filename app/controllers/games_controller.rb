@@ -25,7 +25,7 @@ class GamesController < ApplicationController
     elsif @exist == false
       @hit = "Sorry #{@created_word} can't be build of #{array}"
     else
-      @rhit = "Sorry but #{@created_word} does not seem like an English word..."
+      @hit = "Sorry but #{@created_word} does not seem like an English word..."
     end
   end
 

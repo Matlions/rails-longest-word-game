@@ -1,11 +1,18 @@
 <h1>Games#new</h1>
 <p>Find me in app/views/games/new.html.erb</p>
 
-<p>generate words : <%= @letters %></p>
+<p>
+  <ul class="letters">
+<% @array.each do |letter| %>
+  <li><%=letter %></li>
+<%end%>
+  </ul>
+</p>
 
-<form action="/score" method="post">
+<form action="/score" method="POST">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <input type="text" name="word" placeholder="what is your longest word can you find ? ">
-  <input type="submit" value="New!">
+  <input type="hidden" name="array" value="<%= @array.join %>">
+  <input type="submit" value="play">
 </form>
 
